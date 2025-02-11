@@ -4,7 +4,7 @@ import pytest
 from blog.factories import PostFactory
 
 
-@pytext.fixture
+@pytest.fixture
 def post_published():
     return PostFactory(title='pytest with factory')
 
