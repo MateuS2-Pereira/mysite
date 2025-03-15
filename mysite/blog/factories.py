@@ -28,6 +28,8 @@ class PostFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Post  # Define que esta fábrica está relacionada ao modelo Post
 
-    title = factory.LazyAttribute(lambda x: faker.sentence())  # Corrigido de `sentance` para `sentence`
-    created_on = factory.LazyAttribute(lambda x: now())
-    status = 0
+    title = factory.LazyAttribute(lambda x: faker.sentence())  
+    created_on = factory.LazyAttribute(lambda x: now())  
+    status = 0  # Se 0 significa "draft", altere conforme necessário
+    author = factory.SubFactory(UserFactory)  # Adicionando um autor válido
+
