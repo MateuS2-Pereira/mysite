@@ -18,9 +18,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('blog.urls')),  # Incluindo as rotas do blog
-]
+urlpatterns = [path('admin/', admin.site.urls), path('home', include('blog.urls'))]
 
 
